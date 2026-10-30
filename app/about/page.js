@@ -21,17 +21,17 @@ import {
 
 const founders = [
   {
-    name: "FOUNDER'S FULL NAME",
+    name: "Amamchukwu Emmanuel O",
     role: "Founder & Chief Executive Officer (CEO)",
-    image: "/images/founder.jpg",
+    image: "/founder.jpg",
     description:
       "Leads the vision, strategy and growth of AutoConnet, building a trusted platform that connects customers with skilled professionals.",
     number: "01",
   },
   {
-    name: "CO-FOUNDER'S FULL NAME",
+    name: "Okoye Chinonso Joseph (Otoko_isu)",
     role: "Co-Founder & Director of Operations",
-    image: "/images/co-founder.jpg",
+    image: "/co-founder.jpg",
     description:
       "Supports the development and daily operations of AutoConnet, helping build a reliable experience for customers and service providers.",
     number: "02",
@@ -90,21 +90,27 @@ const steps = [
 ];
 
 const serviceExamples = [
-  { name: "Electrical work", icon: "⚡" },
-  { name: "Plumbing", icon: "🔧" },
-  { name: "Carpentry", icon: "🪚" },
-  { name: "Phone repairs", icon: "📱" },
-  { name: "Computer services", icon: "💻" },
-  { name: "Automotive repairs", icon: "🚘" },
-  { name: "Painting", icon: "🎨" },
-  { name: "Cleaning", icon: "🧹" },
+  { name: "Electrical work" },
+  { name: "Plumbing" },
+  { name: "Carpentry" },
+  { name: "Phone repairs" },
+  { name: "Computer services" },
+  { name: "Automotive repairs" },
+  { name: "Painting"},
+  { name: "Cleaning" },
 ];
 
 export default function AboutPage() {
   return (
     <main className="overflow-hidden bg-white text-slate-900">
       {/* HERO */}
+      
       <section className="relative isolate bg-[#092b20]">
+        <img
+  src="/group-image.jpg"
+  alt="Skilled professionals representing AutoConnet"
+  className="h-[260px] w-full object-cover sm:h-[420px] lg:h-[520px]"
+/>
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl" />
           <div className="absolute -bottom-32 left-0 h-80 w-80 rounded-full bg-lime-400/10 blur-3xl" />
@@ -164,7 +170,7 @@ export default function AboutPage() {
             <div className="absolute -inset-4 rounded-[2rem] border border-emerald-300/15" />
             <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#123c2e] p-3 shadow-2xl shadow-black/30">
               <img
-                src="/images/skilled-workers.jpg"
+                src="/image45.jpg"
                 alt="Skilled professionals representing the AutoConnet community"
                 className="h-[300px] w-full rounded-2xl object-cover sm:h-[420px]"
               />
@@ -375,7 +381,7 @@ export default function AboutPage() {
       {/* FOUNDERS */}
       <section
         id="founders"
-        className="relative overflow-hidden bg-[#f3f8f5] py-20 sm:py-24 lg:py-28"
+        className="relative overflow-hidden bg-[#f3f8f5] py-10  lg:py-28"
       >
         <div className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-emerald-200/40 blur-3xl" />
         <div className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-lime-200/30 blur-3xl" />

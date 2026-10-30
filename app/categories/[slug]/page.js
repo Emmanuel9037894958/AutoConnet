@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -37,6 +36,7 @@ const categories = {
     shortName: "Phone Repair",
     description:
       "Find mobile phone technicians for screen replacements, battery problems, charging faults and other phone repairs.",
+    image: "/image34.jpg",
     icon: Smartphone,
     services: [
       "Android Phone Repair",
@@ -57,6 +57,7 @@ const categories = {
     shortName: "Computer & IT",
     description:
       "Connect with computer technicians and IT professionals for repairs, software, networking and digital services.",
+    image: "/image105.jpg",
     icon: Laptop,
     services: [
       "Laptop Repair",
@@ -79,6 +80,7 @@ const categories = {
     shortName: "Electrical",
     description:
       "Find electricians for home wiring, electrical faults, installations and maintenance.",
+    image: "/image65.jpg",
     icon: Zap,
     services: [
       "House Wiring",
@@ -99,6 +101,7 @@ const categories = {
     shortName: "Plumbing",
     description:
       "Connect with plumbers for leaks, blocked drains, water systems, bathrooms and plumbing installations.",
+    image: "/image10.jpg",
     icon: Droplets,
     services: [
       "Pipe Installation",
@@ -120,6 +123,7 @@ const categories = {
     shortName: "Carpentry",
     description:
       "Find skilled carpenters for custom furniture, doors, cabinets and woodwork repairs.",
+    image: "/image90.jpg",
     icon: Hammer,
     services: [
       "Furniture Making",
@@ -141,6 +145,7 @@ const categories = {
     shortName: "Painting",
     description:
       "Find painters for residential, commercial and decorative painting projects.",
+    image: "/image55.jpg",
     icon: Paintbrush,
     services: [
       "Interior Painting",
@@ -161,6 +166,7 @@ const categories = {
     shortName: "Building",
     description:
       "Find tradespeople for construction, renovation, finishing and general building maintenance.",
+    image: "/image43.jpg",
     icon: HardHat,
     services: [
       "Bricklaying",
@@ -183,6 +189,7 @@ const categories = {
     shortName: "Welding",
     description:
       "Connect with welders and fabricators for metal gates, railings, frames and repairs.",
+    image: "/image3.jpg",
     icon: Hammer,
     services: [
       "Gate Fabrication",
@@ -203,6 +210,7 @@ const categories = {
     shortName: "AC Services",
     description:
       "Find technicians for air conditioners, refrigerators, freezers and cooling system maintenance.",
+    image: "/image83.jpg",
     icon: Snowflake,
     services: [
       "Air Conditioner Installation",
@@ -223,6 +231,7 @@ const categories = {
     shortName: "Cleaning",
     description:
       "Find cleaners for homes, offices, shops, compounds and post-construction spaces.",
+    image: "/image28.jpg",
     icon: Sparkles,
     services: [
       "House Cleaning",
@@ -245,6 +254,7 @@ const categories = {
     shortName: "Gardening",
     description:
       "Discover gardeners, flower growers and landscaping professionals for outdoor spaces and gardens.",
+    image: "/image72.jpg",
     icon: Flower2,
     services: [
       "Gardening",
@@ -267,6 +277,7 @@ const categories = {
     shortName: "Grass Cutting",
     description:
       "Find people to cut grass, clear overgrown plots and maintain compounds and lawns.",
+    image: "/image30.jpg",
     icon: Trees,
     services: [
       "Residential Grass Cutting",
@@ -286,6 +297,7 @@ const categories = {
     shortName: "Automotive",
     description:
       "Find mechanics and automotive professionals for vehicle repairs, servicing and maintenance.",
+    image: "/image6.jpg",
     icon: Car,
     services: [
       "Car Mechanic",
@@ -308,6 +320,7 @@ const categories = {
     shortName: "Fashion & Beauty",
     description:
       "Find fashion designers, barbers, hairstylists and beauty professionals.",
+    image: "/image67.jpg",
     icon: Scissors,
     services: [
       "Fashion Design",
@@ -329,6 +342,7 @@ const categories = {
     shortName: "Tailoring",
     description:
       "Connect with tailors and clothing makers for custom outfits, alterations and garment repairs.",
+    image: "/image5.jpg",
     icon: Shirt,
     services: [
       "Men's Tailoring",
@@ -349,6 +363,7 @@ const categories = {
     shortName: "Moving & Delivery",
     description:
       "Find people to help move household items, transport goods, deliver packages and run errands.",
+    image: "/image92.jpg",
     icon: Truck,
     services: [
       "House Moving",
@@ -369,6 +384,7 @@ const categories = {
     shortName: "Education",
     description:
       "Find tutors and instructors for school subjects, computer skills and practical learning.",
+    image: "/image98.jpg",
     icon: GraduationCap,
     services: [
       "Home Lessons",
@@ -390,6 +406,7 @@ const categories = {
     shortName: "Agriculture",
     description:
       "Connect with farm workers and agricultural service providers for cultivation and farm maintenance.",
+    image: "/image103.jpg",
     icon: Sprout,
     services: [
       "Crop Cultivation",
@@ -411,6 +428,7 @@ const categories = {
     shortName: "Photography",
     description:
       "Find photographers and media professionals for events, portraits, products and video coverage.",
+    image: "/image99.jpg",
     icon: Camera,
     services: [
       "Event Photography",
@@ -431,6 +449,7 @@ const categories = {
     shortName: "Food & Events",
     description:
       "Discover cooks, caterers and event professionals for meals, celebrations and gatherings.",
+    image: "/image101.jpg",
     icon: Utensils,
     services: [
       "Home Cooking",
@@ -452,6 +471,7 @@ const categories = {
     shortName: "Mobile Services",
     description:
       "Find service providers who can travel to your home, office or preferred location by arrangement.",
+    image: "/image70.jpg",
     icon: Bike,
     services: [
       "Mobile Phone Repair",
@@ -472,6 +492,7 @@ const categories = {
     shortName: "Other Services",
     description:
       "Find additional skilled workers for everyday tasks and specialised services not listed elsewhere.",
+    image: "/image22.jpg",
     icon: BriefcaseBusiness,
     services: [
       "General Handyman",
@@ -529,10 +550,9 @@ export function generateStaticParams() {
   ].map((slug) => ({ slug }));
 }
 
-// export const dynamicParams = false;
-
 export default async function CategoryPage({ params }) {
-  const { slug } = await params;
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug;
   const categorySlug = aliases[slug] || slug;
   const category = categories[categorySlug];
 
@@ -547,102 +567,129 @@ export default async function CategoryPage({ params }) {
     .slice(0, 6);
 
   return (
-    <main className="min-h-screen bg-[#f7f9f6] text-slate-900">
-      <section className="relative overflow-hidden bg-[#103e2d]">
-        <div className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full border border-white/10" />
+    <main className="min-h-screen bg-slate-950 text-slate-100 selection:bg-emerald-500 selection:text-slate-950">
+      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-950 border-b border-emerald-500/20 shadow-2xl">
+        <div className="pointer-events-none absolute -right-20 -top-24 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl" />
 
-        <div className="pointer-events-none absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-100 transition hover:text-white"
+            className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 transition-colors hover:text-emerald-300"
           >
             <ArrowLeft size={17} />
             Back to all services
           </Link>
 
-          <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#b9ef8b] text-[#103e2d] shadow-lg shadow-black/10">
-              <Icon size={30} strokeWidth={1.8} />
-            </div>
-
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#b9ef8b]">
-                <ShieldCheck size={15} />
+          <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-emerald-300 bg-emerald-900/40 px-3.5 py-1.5 rounded-full border border-emerald-500/30 shadow-inner">
+                <ShieldCheck size={15} className="text-emerald-400" />
                 AutoConnet Services
               </div>
 
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-5xl">
+              <h1 className="mt-6 text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
                 {category.name}
               </h1>
 
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-emerald-50/80 sm:text-base">
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
                 {category.description}
               </p>
             </div>
+
+            <div className="relative h-52 w-full shrink-0 overflow-hidden rounded-3xl border border-emerald-500/30 bg-slate-900 shadow-2xl shadow-emerald-950/50 lg:h-64 lg:w-80">
+              <img
+                src={category.image}
+                alt={category.name}
+                className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+
+              <div className="absolute bottom-4 left-4 flex items-center gap-2.5 rounded-2xl bg-slate-900/90 backdrop-blur-xl px-3.5 py-2.5 border border-emerald-500/30 shadow-lg">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 text-slate-950 font-bold shadow-md">
+                  <Icon size={18} strokeWidth={2.5} />
+                </div>
+
+                <span className="text-xs font-bold text-white tracking-wide">
+                  Verified Experts
+                </span>
+              </div>
+            </div>
           </div>
 
-          <CategorySearch
-            categoryName={category.name}
-            shortName={category.shortName}
-          />
+          <div className="mt-10">
+            <CategorySearch
+              categoryName={category.name}
+              shortName={category.shortName}
+            />
+          </div>
 
-          <p className="mt-4 text-xs text-emerald-50/60">
+          <p className="mt-4 text-xs font-medium text-emerald-400/80">
             Contact providers directly to discuss availability, pricing and job
             details.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">
+            <p className="text-xs font-bold uppercase tracking-widest text-emerald-400">
               Explore your options
             </p>
 
-            <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               What do you need done?
             </h2>
 
-            <p className="mt-3 text-sm leading-6 text-slate-500">
+            <p className="mt-3 text-base text-slate-400">
               Choose the specific service that matches your job.
             </p>
           </div>
 
-          <span className="w-fit rounded-full border border-emerald-100 bg-white px-4 py-2 text-sm font-semibold text-emerald-800">
+          <span className="w-fit rounded-full border border-emerald-500/30 bg-gradient-to-r from-emerald-950 to-slate-900 px-4 py-2 text-sm font-semibold text-emerald-300 shadow-lg">
             {category.services.length} service types
           </span>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {category.services.map((service, index) => (
             <article
               key={service}
-              className="group flex flex-col rounded-2xl border border-slate-200/80 bg-white p-5 transition duration-200 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-b from-slate-900/90 to-slate-900/50 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/50 hover:bg-slate-900 hover:shadow-2xl hover:shadow-emerald-950/40"
             >
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 transition group-hover:bg-emerald-700 group-hover:text-white">
-                  <Wrench size={20} strokeWidth={1.8} />
-                </div>
+              <div className="relative mb-5 h-40 w-full overflow-hidden rounded-2xl bg-slate-950 shadow-inner">
+                <img
+                  src={category.image}
+                  alt={`${service} - ${category.name}`}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
 
-                <span className="text-xs font-semibold tabular-nums text-slate-400">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
+
+                <span className="absolute top-3 right-3 rounded-lg bg-slate-900/90 backdrop-blur-md px-2.5 py-1 text-xs font-bold tabular-nums text-emerald-400 border border-slate-700/80 shadow-md">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              <h3 className="mt-5 text-lg font-bold text-slate-900">
-                {service}
-              </h3>
+              <div className="flex items-center gap-3.5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-950 text-emerald-400 border border-emerald-500/30 shadow-md transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-emerald-400 group-hover:to-emerald-600 group-hover:text-slate-950 group-hover:shadow-emerald-500/20">
+                  <Wrench size={20} strokeWidth={2} />
+                </div>
 
-              <p className="mt-2 flex-1 text-sm leading-6 text-slate-500">
+                <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
+                  {service}
+                </h3>
+              </div>
+
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400">
                 Find a professional who offers {service.toLowerCase()}.
               </p>
 
               <Link
                 href={`/services?search=${encodeURIComponent(service)}`}
-                className="mt-5 inline-flex w-fit items-center gap-2 rounded-xl bg-emerald-50 px-4 py-2.5 text-sm font-bold text-emerald-800 transition hover:bg-emerald-700 hover:text-white"
+                className="mt-6 inline-flex w-fit items-center gap-2 rounded-xl bg-emerald-950/80 border border-emerald-500/30 px-4 py-2.5 text-sm font-semibold text-emerald-300 transition-all duration-300 hover:bg-emerald-500 hover:text-slate-950 hover:shadow-lg hover:shadow-emerald-500/20"
               >
                 Explore providers
                 <ArrowRight size={16} />
@@ -651,18 +698,18 @@ export default async function CategoryPage({ params }) {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-amber-200 bg-amber-50 p-5 sm:p-6">
-          <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-amber-700">
-              <ShieldCheck size={20} />
+        <div className="mt-12 rounded-3xl border border-amber-500/30 bg-gradient-to-r from-amber-950/30 via-slate-900 to-slate-900 p-6 sm:p-8 backdrop-blur-xl shadow-xl">
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/30 shadow-lg">
+              <ShieldCheck size={24} />
             </div>
 
             <div>
-              <h3 className="font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-amber-200">
                 Looking for someone available now?
               </h3>
 
-              <p className="mt-2 text-sm leading-6 text-slate-600">
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
                 Provider availability depends on registered workers and their
                 current schedules. Browse the marketplace to check the listings;
                 AutoConnet does not display invented provider profiles.
@@ -670,7 +717,7 @@ export default async function CategoryPage({ params }) {
 
               <Link
                 href="/services"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-emerald-800 hover:underline"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition-colors hover:underline"
               >
                 Explore the marketplace
                 <ArrowRight size={16} />
@@ -680,19 +727,21 @@ export default async function CategoryPage({ params }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-[#e5f2e6] p-6 sm:p-10">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-900 via-teal-900 to-emerald-950 p-8 sm:p-12 shadow-2xl shadow-emerald-950/60">
+          <div className="pointer-events-none absolute -right-10 -top-10 h-72 w-72 rounded-full bg-emerald-400/20 blur-3xl" />
+
+          <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-800">
+              <p className="text-xs font-bold uppercase tracking-widest text-emerald-300">
                 For skilled workers
               </p>
 
-              <h2 className="mt-2 text-2xl font-bold text-[#153e2c] sm:text-3xl">
+              <h2 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">
                 Do you offer {category.shortName.toLowerCase()} services?
               </h2>
 
-              <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">
+              <p className="mt-3 text-base leading-relaxed text-emerald-100 sm:text-lg">
                 Create your worker profile and select the services you provide
                 so customers can discover and contact you.
               </p>
@@ -700,38 +749,38 @@ export default async function CategoryPage({ params }) {
 
             <Link
               href="/register"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#176b46] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[#105536]"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-white px-7 py-4 text-sm font-extrabold text-emerald-950 shadow-xl transition-all duration-300 hover:bg-emerald-100 hover:shadow-white/20 hover:scale-105"
             >
               Join as a worker
-              <ArrowRight size={17} />
+              <ArrowRight size={18} />
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <section className="border-t border-slate-900 bg-slate-950">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h2 className="text-xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-white">
                 Explore other categories
               </h2>
 
-              <p className="mt-2 text-sm text-slate-500">
+              <p className="mt-2 text-sm text-slate-400">
                 Find other skills and services on AutoConnet.
               </p>
             </div>
 
             <Link
               href="/services"
-              className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-emerald-800 hover:underline sm:mt-0"
+              className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors hover:underline sm:mt-0"
             >
               View all categories
               <ArrowRight size={16} />
             </Link>
           </div>
 
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {relatedCategories.map(([key, item]) => {
               const RelatedIcon = item.icon;
 
@@ -739,15 +788,13 @@ export default async function CategoryPage({ params }) {
                 <Link
                   key={key}
                   href={`/categories/${key}`}
-                  className="group rounded-xl border border-slate-200 p-4 transition hover:border-emerald-300 hover:bg-emerald-50"
+                  className="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-slate-900 hover:shadow-xl hover:shadow-emerald-950/30"
                 >
-                  <RelatedIcon
-                    size={22}
-                    className="text-emerald-700"
-                    strokeWidth={1.8}
-                  />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-950/80 text-emerald-400 border border-emerald-500/30 transition-transform duration-300 group-hover:scale-110">
+                    <RelatedIcon size={20} strokeWidth={2} />
+                  </div>
 
-                  <p className="mt-3 text-sm font-bold text-slate-800 group-hover:text-emerald-800">
+                  <p className="mt-4 text-sm font-bold text-slate-200 group-hover:text-emerald-300 transition-colors">
                     {item.shortName}
                   </p>
                 </Link>

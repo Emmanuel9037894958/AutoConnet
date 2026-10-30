@@ -1,8 +1,31 @@
+
 "use client";
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { serviceCategories } from "@/lib/utils";
+
+const categoryImages = {
+  "Phone Repair": "/image34.jpg",
+  "Computer Repair": "/image105.jpg",
+  Electrical: "/image65.jpg",
+  Plumbing: "/image10.jpg",
+  Carpentry: "/image89.jpg",
+  Painting: "/image55.jpg",
+  Welding: "/image7.jpg",
+  "AC Services": "/image83.jpg",
+};
+
+const categoryColors = [
+  "bg-emerald-50",
+  "bg-blue-50",
+  "bg-amber-50",
+  "bg-rose-50",
+  "bg-violet-50",
+  "bg-orange-50",
+  "bg-cyan-50",
+  "bg-lime-50",
+];
 
 export default function ServiceCategories() {
   const [search, setSearch] = useState("");
@@ -31,7 +54,10 @@ export default function ServiceCategories() {
   }
 
   return (
-    <section id="services" className="scroll-mt-24 py-16 sm:py-20">
+    <section
+      id="services"
+      className="scroll-mt-24 bg-gradient-to-b from-[#f0f8f2] via-[#f8faf6] to-[#fff8ed] py-16 sm:py-20"
+    >
       <div className="mx-auto w-[calc(100%-32px)] max-w-[1160px]">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
@@ -39,7 +65,7 @@ export default function ServiceCategories() {
               Explore the marketplace
             </p>
 
-            <h2 className="mt-3 text-3xl font-extrabold tracking-[-1px] sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-extrabold tracking-[-1px] text-[#19251f] sm:text-4xl">
               What do you need done?
             </h2>
 
@@ -52,69 +78,95 @@ export default function ServiceCategories() {
           <button
             type="button"
             onClick={clearFilters}
-            className="w-fit text-sm font-bold text-[#176b46] hover:underline"
+            className="w-fit rounded-full bg-[#176b46] px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#105537]"
           >
             View all categories ↗
           </button>
         </div>
 
-        <div className="mt-7">
+        <div className="mt-8">
           <input
             type="search"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Search for a service..."
-            className="w-full rounded-xl border border-[#e2e8df] bg-white px-4 py-4 text-sm outline-none transition focus:border-[#176b46] focus:ring-2 focus:ring-[#176b46]/10"
+            className="w-full rounded-2xl border border-[#dce9df] bg-white px-5 py-4 text-sm text-[#19251f] shadow-sm outline-none transition placeholder:text-[#929d94] focus:border-[#176b46] focus:ring-2 focus:ring-[#176b46]/10"
           />
         </div>
 
         <div className="mt-5 flex flex-wrap gap-2">
-          {["All services", ...serviceCategories.map((item) => item.name)].map(
-            (item) => (
-              <button
-                key={item}
-                type="button"
-                onClick={() => setActiveCategory(item)}
-                className={`rounded-full border px-4 py-2.5 text-sm font-medium transition ${
-                  activeCategory === item
-                    ? "border-[#176b46] bg-[#176b46] text-white"
-                    : "border-[#e2e8df] bg-white text-[#526159] hover:border-[#9fbea7]"
-                }`}
-              >
-                {item}
-              </button>
-            ),
-          )}
+          {[
+            "All services",
+            ...serviceCategories.map((item) => item.name),
+          ].map((item) => (
+            <button
+              key={item}
+              type="button"
+              onClick={() => setActiveCategory(item)}
+              className={`rounded-full px-4 py-2.5 text-sm font-semibold transition ${
+                activeCategory === item
+                  ? "bg-[#176b46] text-white shadow-md"
+                  : "border border-[#dce9df] bg-white text-[#526159] hover:border-[#176b46] hover:text-[#176b46]"
+              }`}
+            >
+              {item}
+            </button>
+          ))}
         </div>
 
-        <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {filteredCategories.map((category) => (
+        <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {filteredCategories.map((category, index) => (
             <Link
               key={category.slug}
               href={`/categories/${category.slug}`}
-              className="group flex min-h-[210px] flex-col items-start rounded-2xl border border-[#e7ebe4] bg-white p-5 text-left transition hover:-translate-y-1 hover:border-[#91bda4] hover:shadow-[0_12px_30px_rgba(25,61,42,0.07)]"
+              className="group overflow-hidden rounded-2xl border border-[#e5ece4] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <span className="grid h-[54px] w-[54px] place-items-center rounded-2xl bg-[#edf5ee] text-[29px] font-semibold text-[#176b46]">
-                {category.icon}
-              </span>
+              <div
+                className={`relative h-44 overflow-hidden ${
+                  categoryColors[index % categoryColors.length]
+                }`}
+              >
+                {categoryImages[category.name] ? (
+                  <img
+                    src={categoryImages[category.name]}
+                    alt={category.name}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center text-6xl">
+                    {category.icon}
+                  </div>
+                )}
 
-              <span className="mt-5 flex w-full items-center justify-between gap-2">
-                <span className="font-bold">{category.name}</span>
-                <span className="text-xl text-[#176b46] transition group-hover:translate-x-1">
-                  ↗
+                <span className="absolute bottom-3 left-3 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-[#176b46] shadow-sm">
+                  Explore service
                 </span>
-              </span>
+              </div>
 
-              <span className="mt-2 text-sm leading-6 text-[#7a857c]">
-                {category.description}
-              </span>
+              <div className="p-5">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="font-extrabold text-[#19251f] transition group-hover:text-[#176b46]">
+                    {category.name}
+                  </h3>
+
+                  <span className="text-xl text-[#176b46] transition group-hover:translate-x-1">
+                    ↗
+                  </span>
+                </div>
+
+                <p className="mt-3 text-sm leading-6 text-[#718076]">
+                  {category.description}
+                </p>
+              </div>
             </Link>
           ))}
         </div>
 
         {filteredCategories.length === 0 && (
           <div className="mt-6 rounded-2xl border border-dashed border-[#cbd8ca] bg-white p-8 text-center">
-            <p className="font-semibold">No matching services found.</p>
+            <p className="font-semibold text-[#19251f]">
+              No matching services found.
+            </p>
 
             <button
               type="button"

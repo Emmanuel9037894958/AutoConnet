@@ -38,7 +38,7 @@ export default function WorkerCard({ worker }) {
         href={`/workers/${worker.slug}`}
         className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#176b46] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#105738]"
       >
-        View profile <span>↗</span>
+        View profile
       </Link>
     </article>
   );

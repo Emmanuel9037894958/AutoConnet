@@ -33,240 +33,155 @@ import {
 const categories = [
   {
     slug: "cleaning",
-    name: "Cleaning",
-    description: "Professional cleaners for homes, offices and businesses.",
+    name: "Cleaning & Laundry",
+    description: "Professional cleaners and laundry services for homes, offices and businesses.",
+    imageNumber: 44,
     icon: Sparkles,
-    services: [
-      "Home Cleaning",
-      "Office Cleaning",
-      "Deep Cleaning",
-      "Laundry",
-      "Carpet Cleaning",
-    ],
+    services: ["Home Cleaning", "Office Cleaning", "Deep Cleaning", "Laundry", "Carpet Cleaning"],
   },
   {
     slug: "carpentry",
     name: "Carpentry & Woodwork",
-    description:
-      "Furniture makers, carpenters and woodwork specialists.",
+    description: "Furniture makers, carpenters and woodwork specialists.",
+    imageNumber: 89,
     icon: Hammer,
-    services: [
-      "Carpenter",
-      "Furniture Maker",
-      "Kitchen Cabinets",
-      "Door Installation",
-      "Wood Repairs",
-    ],
+    services: ["Carpenter", "Furniture Maker", "Kitchen Cabinets", "Door Installation", "Wood Repairs"],
   },
   {
     slug: "building-repairs",
     name: "Building & Repairs",
-    description:
-      "Skilled workers for construction, repairs and maintenance.",
+    description: "Skilled workers for construction, repairs and maintenance.",
+    imageNumber: 43,
     icon: Home,
-    services: [
-      "Builder",
-      "Mason",
-      "Tiler",
-      "POP Installer",
-      "Ceiling Installer",
-    ],
+    services: ["Builder", "Mason", "Tiler", "POP Installer", "Ceiling Installer"],
   },
   {
     slug: "electrical",
     name: "Electrical",
-    description:
-      "Electricians for installations, repairs and maintenance.",
+    description: "Electricians for installations, repairs and maintenance.",
+    imageNumber: 58,
     icon: Zap,
-    services: [
-      "Electrician",
-      "Wiring",
-      "Inverter Installation",
-      "Solar Installation",
-      "Generator Repair",
-    ],
+    services: ["Electrician", "Wiring", "Inverter Installation", "Solar Installation", "Generator Repair"],
   },
   {
     slug: "plumbing",
     name: "Plumbing",
-    description:
-      "Plumbers for water systems, pipes, bathrooms and repairs.",
+    description: "Plumbers for water systems, pipes, bathrooms and repairs.",
+    imageNumber: 66,
     icon: Droplets,
-    services: [
-      "Plumber",
-      "Pipe Installation",
-      "Water Tank Installation",
-      "Bathroom Repairs",
-      "Borehole Services",
-    ],
+    services: ["Plumber", "Pipe Installation", "Water Tank Installation", "Bathroom Repairs", "Borehole Services"],
   },
   {
     slug: "painting",
     name: "Painting",
-    description:
-      "Professional painters for homes, offices and commercial spaces.",
+    description: "Professional painters for homes, offices and commercial spaces.",
+    imageNumber: 55,
     icon: Paintbrush,
-    services: [
-      "House Painter",
-      "Interior Painting",
-      "Exterior Painting",
-      "Wall Decoration",
-      "Industrial Painting",
-    ],
+    services: ["House Painter", "Interior Painting", "Exterior Painting", "Wall Decoration", "Industrial Painting"],
   },
   {
     slug: "gardening-flowers",
-    name: "Gardening & Flowers",
-    description:
-      "Gardeners, landscapers and flower specialists.",
+    name: "Gardening & Grass Cutting",
+    description: "Gardeners, grass cutters, landscapers and flower specialists.",
+    imageNumber: 48,
     icon: Flower2,
-    services: [
-      "Gardener",
-      "Grass Cutter",
-      "Landscaper",
-      "Flower Cultivator",
-      "Garden Maintenance",
-    ],
+    services: ["Gardener", "Grass Cutter", "Landscaper", "Flower Cultivator", "Garden Maintenance"],
   },
   {
     slug: "technology",
     name: "Technology",
-    description:
-      "Technicians and digital professionals for your technology needs.",
+    description: "Technicians and digital professionals for your technology needs.",
+    imageNumber: 84,
     icon: Laptop,
-    services: [
-      "Phone Repair",
-      "Computer Repair",
-      "Web Developer",
-      "Graphic Designer",
-      "CCTV Installer",
-    ],
+    services: ["Phone Repair", "Computer Repair", "Web Developer", "Graphic Designer", "CCTV Installer"],
   },
   {
     slug: "automotive",
     name: "Automotive",
-    description:
-      "Mechanics, auto electricians and vehicle specialists.",
+    description: "Mechanics, auto electricians and vehicle specialists.",
+    imageNumber: 62,
     icon: Car,
-    services: [
-      "Mechanic",
-      "Auto Electrician",
-      "Car AC Repair",
-      "Panel Beater",
-      "Car Diagnostics",
-    ],
+    services: ["Mechanic", "Auto Electrician", "Car AC Repair", "Panel Beater", "Car Diagnostics"],
   },
   {
     slug: "fashion-beauty",
     name: "Fashion & Beauty",
-    description:
-      "Fashion designers, barbers, stylists and beauty professionals.",
+    description: "Fashion designers, barbers, stylists and beauty professionals.",
+    imageNumber: 23,
     icon: Scissors,
-    services: [
-      "Tailor",
-      "Fashion Designer",
-      "Barber",
-      "Hair Stylist",
-      "Makeup Artist",
-    ],
+    services: ["Tailor", "Fashion Designer", "Barber", "Hair Stylist", "Makeup Artist"],
+  },
+    {
+    slug: "Mechanic",
+    name: "Automotive & Mechanical Repairs",
+    description: "Mechanics for car repairs, vechicle diagnostics,servicing and breakdown support",
+    imageNumber: 33,
+    icon: Wrench,
+    services: ["Mechanic", "Auto Electrician", "Car Diagnostics", "Engine Repairs", "Break & Clutch Repairs", "Oil change & Servicing"],
   },
   {
     slug: "moving-delivery",
     name: "Moving & Delivery",
-    description:
-      "Reliable people for transportation, moving and deliveries.",
+    description: "Reliable people for transportation, moving and deliveries.",
+    imageNumber: 91,
     icon: Truck,
-    services: [
-      "Mover",
-      "Delivery Rider",
-      "Driver",
-      "Truck Driver",
-      "Courier",
-    ],
+    services: ["Mover", "Delivery Rider", "Driver", "Truck Driver", "Courier"],
   },
   {
     slug: "education",
     name: "Education",
-    description:
-      "Tutors, teachers and educational professionals.",
+    description: "Tutors, teachers and educational professionals.",
+    imageNumber: 98,
     icon: GraduationCap,
-    services: [
-      "Home Tutor",
-      "Computer Teacher",
-      "Music Teacher",
-      "Language Tutor",
-      "Exam Tutor",
-    ],
+    services: ["Home Tutor", "Computer Teacher", "Music Teacher", "Language Tutor", "Exam Tutor"],
   },
   {
     slug: "agriculture",
     name: "Agriculture",
-    description:
-      "Farmers and agricultural service providers.",
+    description: "Farmers and agricultural service providers.",
+    imageNumber: 97,
     icon: Settings,
-    services: [
-      "Farmer",
-      "Poultry Farmer",
-      "Fish Farmer",
-      "Farm Labourer",
-      "Agricultural Consultant",
-    ],
+    services: ["Farmer", "Poultry Farmer", "Fish Farmer", "Farm Labourer", "Agricultural Consultant"],
   },
   {
     slug: "photography",
     name: "Photography & Media",
-    description:
-      "Photographers, videographers and creative professionals.",
+    description: "Photographers, videographers and creative professionals.",
+    imageNumber: 99,
     icon: Camera,
-    services: [
-      "Photographer",
-      "Videographer",
-      "Drone Operator",
-      "Photo Editor",
-      "Video Editor",
-    ],
+    services: ["Photographer", "Videographer", "Drone Operator", "Photo Editor", "Video Editor"],
   },
   {
     slug: "food-events",
     name: "Food & Events",
-    description:
-      "Caterers, chefs and event professionals.",
+    description: "Caterers, chefs and event professionals.",
+    imageNumber: 93,
     icon: Utensils,
-    services: [
-      "Caterer",
-      "Private Chef",
-      "Baker",
-      "Event Planner",
-      "Waiter",
-    ],
+    services: ["Caterer", "Private Chef", "Baker", "Event Planner", "Waiter"],
   },
   {
     slug: "clothing",
     name: "Clothing & Fashion",
-    description:
-      "Professionals who create, repair and customize clothing.",
+    description: "Professionals who create, repair and customize clothing.",
+    imageNumber: 104,
     icon: Shirt,
-    services: [
-      "Tailor",
-      "Shoe Maker",
-      "Bag Maker",
-      "Clothing Designer",
-      "Clothing Repair",
-    ],
+    services: ["Tailor", "Shoe Maker", "Bag Maker", "Clothing Designer", "Clothing Repair"],
   },
   {
     slug: "mobile-services",
     name: "Phone & Device Services",
-    description:
-      "Experts for phones, tablets and other devices.",
+    description: "Experts for phones, tablets and other devices.",
+    imageNumber: 64,
     icon: Smartphone,
-    services: [
-      "Phone Repair",
-      "Screen Replacement",
-      "Software Installation",
-      "Phone Unlocking",
-      "Device Setup",
-    ],
+    services: ["Phone Repair", "Screen Replacement", "Software Installation", "Phone Unlocking", "Device Setup"],
+  },
+  {
+    slug: "welding",
+    name: "Welding & Metal Fabrication",
+    description: "Welders for gates, railings, metal fabrication and repairs.",
+    imageNumber: 3,
+    icon: Hammer,
+    services: ["Welder", "Gate Fabrication", "Metal Doors", "Window Protectors", "Metal Repairs"],
   },
 ];
 
@@ -278,16 +193,70 @@ const popularSearches = [
   "Carpenter",
   "Phone Repair",
   "Painter",
+  "Welder",
+  "Laundry",
   "Barber",
-  "Gardener",
-  "Tailor",
   "Grass Cutter",
   "Web Developer",
 ];
 
+const imageExtensions = [
+  "jpg",
+  "jpeg",
+  "png",
+  "webp",
+  "JPG",
+  "JPEG",
+  "PNG",
+  "WEBP",
+];
+
+function CategoryImage({ number, name }) {
+  const [extensionIndex, setExtensionIndex] = useState(0);
+  const [imageFailed, setImageFailed] = useState(false);
+
+  const imageSrc = `/image${number}.${imageExtensions[extensionIndex]}`;
+
+  function handleImageError() {
+    if (extensionIndex < imageExtensions.length - 1) {
+      setExtensionIndex((current) => current + 1);
+    } else {
+      setImageFailed(true);
+    }
+  }
+
+  if (imageFailed) {
+    return (
+      <div className="flex h-52 w-full items-center justify-center bg-gradient-to-br from-emerald-100 via-emerald-50 to-lime-100">
+        <div className="text-center">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-emerald-700 shadow-sm">
+            <Wrench size={32} />
+          </div>
+          <p className="mt-3 text-sm font-semibold text-emerald-900">
+            {name}
+          </p>
+          <p className="mt-1 text-xs text-emerald-700">
+            Add this category image to public
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      key={imageSrc}
+      src={imageSrc}
+      alt={`${name} services on AutoConnet`}
+      loading="lazy"
+      onError={handleImageError}
+      className="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+    />
+  );
+}
+
 export default function ServicesPage() {
   const router = useRouter();
-
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
 
@@ -325,13 +294,10 @@ export default function ServicesPage() {
 
   function handleSearch(event) {
     event.preventDefault();
-
     goToProviders(search);
   }
 
   function browseCategory(category) {
-    // Search for a real provider offering the first service in this category.
-    // Customers can change the search on the providers page.
     goToProviders(category.services[0]);
   }
 
@@ -348,7 +314,6 @@ export default function ServicesPage() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-emerald-400/20 blur-3xl"
         />
-
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-lime-300/10 blur-3xl"
@@ -363,9 +328,7 @@ export default function ServicesPage() {
 
             <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
               What do you need
-              <span className="block text-emerald-300">
-                help with?
-              </span>
+              <span className="block text-emerald-300"> help with?</span>
             </h1>
 
             <p className="mt-5 max-w-2xl text-base leading-7 text-emerald-50/85 sm:text-lg">
@@ -374,18 +337,13 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          {/* FUNCTIONAL SEARCH FORM */}
           <form
             onSubmit={handleSearch}
             className="mt-10 rounded-3xl border border-white/15 bg-white/10 p-3 shadow-2xl backdrop-blur-xl"
           >
             <div className="grid gap-3 md:grid-cols-[1fr_0.65fr_auto]">
               <div className="flex min-w-0 items-center gap-3 rounded-2xl bg-white px-4 py-4">
-                <Search
-                  className="shrink-0 text-emerald-700"
-                  size={21}
-                />
-
+                <Search className="shrink-0 text-emerald-700" size={21} />
                 <input
                   type="search"
                   value={search}
@@ -394,7 +352,6 @@ export default function ServicesPage() {
                   aria-label="What service do you need?"
                   className="w-full min-w-0 bg-transparent text-sm font-medium text-slate-900 outline-none placeholder:text-slate-400"
                 />
-
                 {search && (
                   <button
                     type="button"
@@ -408,11 +365,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="flex min-w-0 items-center gap-3 rounded-2xl bg-white px-4 py-4">
-                <MapPin
-                  className="shrink-0 text-emerald-700"
-                  size={21}
-                />
-
+                <MapPin className="shrink-0 text-emerald-700" size={21} />
                 <input
                   type="text"
                   value={location}
@@ -433,8 +386,7 @@ export default function ServicesPage() {
             </div>
 
             <p className="px-2 pb-1 pt-3 text-xs leading-5 text-emerald-50/70">
-              Search by profession or service. Add a city to narrow
-              your results.
+              Search by profession or service. Add a city to narrow your results.
             </p>
           </form>
         </div>
@@ -447,7 +399,6 @@ export default function ServicesPage() {
             <span className="mr-1 text-sm font-bold text-slate-500">
               Popular:
             </span>
-
             {popularSearches.map((service) => (
               <button
                 key={service}
@@ -462,21 +413,19 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CATEGORIES */}
+      {/* CATEGORIES WITH IMAGES */}
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-10">
         <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-emerald-700">
               Explore services
             </p>
-
             <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
               Find the right professional
             </h2>
-
             <p className="mt-3 max-w-2xl text-slate-600">
-              Choose a category or search for a specific service to
-              find professionals who offer it.
+              Choose a category or search for a specific service to find
+              professionals who offer it.
             </p>
           </div>
 
@@ -491,7 +440,6 @@ export default function ServicesPage() {
                 Clear filters
               </button>
             )}
-
             <div className="shrink-0 rounded-full bg-emerald-100 px-4 py-2 text-sm font-bold text-emerald-800">
               {filteredCategories.length} categories
             </div>
@@ -500,20 +448,13 @@ export default function ServicesPage() {
 
         {filteredCategories.length === 0 ? (
           <div className="rounded-3xl border border-dashed border-emerald-200 bg-white p-10 text-center sm:p-12">
-            <Search
-              className="mx-auto text-emerald-600"
-              size={40}
-            />
-
+            <Search className="mx-auto text-emerald-600" size={40} />
             <h3 className="mt-4 text-xl font-bold">
               No matching service category
             </h3>
-
             <p className="mt-2 text-sm leading-6 text-slate-500">
-              Try a different keyword, or search the provider
-              marketplace directly.
+              Try a different keyword, or search the provider marketplace directly.
             </p>
-
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <button
                 type="button"
@@ -522,7 +463,6 @@ export default function ServicesPage() {
               >
                 Show all categories
               </button>
-
               <button
                 type="button"
                 onClick={() => goToProviders(search)}
@@ -542,12 +482,17 @@ export default function ServicesPage() {
                   key={category.slug}
                   className="group flex flex-col overflow-hidden rounded-3xl border border-emerald-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl"
                 >
+                  {/* Image is displayed first, above the text */}
+                  <CategoryImage
+                    number={category.imageNumber}
+                    name={category.name}
+                  />
+
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 transition group-hover:bg-emerald-600 group-hover:text-white">
                         <Icon size={27} strokeWidth={1.8} />
                       </div>
-
                       <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">
                         {category.services.length} services
                       </span>
@@ -580,7 +525,6 @@ export default function ServicesPage() {
                       className="mt-6 flex w-full items-center justify-between border-t border-slate-100 pt-5 text-left text-sm font-bold text-emerald-700"
                     >
                       <span>Browse providers</span>
-
                       <ArrowRight
                         size={18}
                         className="transition group-hover:translate-x-1"
@@ -601,25 +545,20 @@ export default function ServicesPage() {
             aria-hidden="true"
             className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-white/10"
           />
-
           <div className="relative flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-2xl">
               <div className="mb-3 inline-flex items-center gap-2 text-sm font-bold text-emerald-300">
                 <Wrench size={17} />
                 ARE YOU A SKILLED WORKER?
               </div>
-
               <h2 className="text-3xl font-black text-white sm:text-4xl">
                 Put your skills in front of people who need them.
               </h2>
-
               <p className="mt-4 leading-7 text-emerald-50/80">
-                Create one professional profile and list the services
-                you provide. Help customers discover your skills and
-                contact you directly.
+                Create one professional profile and list the services you provide.
+                Help customers discover your skills and contact you directly.
               </p>
             </div>
-
             <Link
               href="/register"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-white px-7 py-4 font-black text-[#063b2b] transition hover:bg-emerald-50 focus:outline-none focus:ring-4 focus:ring-white/30"
@@ -635,13 +574,9 @@ export default function ServicesPage() {
       <section className="border-t border-emerald-100 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
           <p className="flex items-center gap-2">
-            <ShieldCheck
-              size={18}
-              className="shrink-0 text-emerald-700"
-            />
+            <ShieldCheck size={18} className="shrink-0 text-emerald-700" />
             AutoConnet helps customers discover local service providers.
           </p>
-
           <Link
             href="/"
             className="inline-flex items-center gap-2 font-bold text-emerald-800 hover:underline"

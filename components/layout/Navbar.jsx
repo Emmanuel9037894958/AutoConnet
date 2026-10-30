@@ -60,9 +60,11 @@ function BrandName({ mobile = false }) {
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
+  { label: "Contact", href: "/contact" },
   { label: "Explore services", href: "/services" },
   { label: "How it works", href: "/#how-it-works" },
   { label: "For professionals", href: "/#professionals" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export default function Navbar() {
