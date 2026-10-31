@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -7,33 +6,62 @@ export default function Preloader() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(false), 5000);
+    const timer = setTimeout(() => {
+      setVisible(false);
+    }, 5000);
+
     return () => clearTimeout(timer);
   }, []);
 
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#e0fbe0]">
-      {/* Soft background glow */}
-      <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-emerald-100/70 blur-3xl" />
-      <div className="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-green-100/70 blur-3xl" />
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#f3fff6]">
+      {/* Background glow */}
+      <div className="absolute inset-0">
+        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-emerald-200/30 blur-[100px]" />
 
-      <div className="relative flex flex-col items-center px-6 text-center">
-        {/* Circular loader */}
-        <div className="relative mb-8 flex h-36 w-36 items-center justify-center">
-          {/* Outer rotating ring */}
-          <div className="absolute inset-0 animate-spin rounded-full border-[3px] border-[#176b46]/10 border-t-[#176b46]" />
+        <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-green-200/30 blur-[100px]" />
 
-          {/* Inner rotating ring */}
-          <div className="absolute inset-3 animate-[spin_1.5s_linear_infinite_reverse] rounded-full border-2 border-transparent border-b-[#75bd91] border-l-[#75bd91]" />
+        <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#176b46]/5" />
 
-          {/* Brand icon */}
-          <div className="relative flex h-[76px] w-[76px] items-center justify-center rounded-[24px] bg-[#176b46] shadow-[0_10px_35px_rgba(23,107,70,0.25)]">
+        <div className="absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#176b46]/5" />
+      </div>
+
+      {/* Loader */}
+      <div className="relative flex flex-col items-center">
+        {/* Animated logo */}
+        <div className="relative flex h-40 w-40 items-center justify-center">
+          {/* Glow */}
+          <div className="absolute h-28 w-28 animate-pulse rounded-full bg-[#176b46]/10 blur-2xl" />
+
+          {/* Outer ring */}
+          <div className="absolute inset-0 animate-[spin_6s_linear_infinite] rounded-full border border-[#176b46]/10" />
+
+          {/* Main ring */}
+          <div className="absolute inset-2 animate-[spin_2.8s_linear_infinite] rounded-full border-[3px] border-transparent border-r-[#176b46]/30 border-t-[#176b46]" />
+
+          {/* Inner ring */}
+          <div className="absolute inset-5 animate-[spin_2s_linear_infinite_reverse] rounded-full border-2 border-transparent border-b-[#75bd91] border-l-[#75bd91]/40" />
+
+          {/* Orbit dots */}
+          <div className="absolute inset-0 animate-[spin_5s_linear_infinite]">
+            <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-[#176b46] shadow-[0_0_12px_rgba(23,107,70,0.5)]" />
+
+            <span className="absolute bottom-3 left-5 h-1.5 w-1.5 rounded-full bg-[#75bd91]" />
+          </div>
+
+          {/* Logo box */}
+          <div className="relative flex h-[82px] w-[82px] items-center justify-center rounded-[26px] bg-[#176b46] shadow-[0_15px_45px_rgba(23,107,70,0.28)]">
+            <div className="absolute inset-0 overflow-hidden rounded-[26px]">
+              <div className="preloader-shine absolute -left-20 top-0 h-full w-16 rotate-[25deg] bg-white/10 blur-md" />
+            </div>
+
+            {/* AutoConnet icon */}
             <svg
               viewBox="0 0 48 48"
               fill="none"
-              className="h-12 w-12"
+              className="relative h-12 w-12"
               aria-hidden="true"
             >
               <path
@@ -43,6 +71,7 @@ export default function Preloader() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
+
               <path
                 d="M23 19.5L28.5 14L37 22.5L28.5 31L23 25.5"
                 stroke="#BDE8C9"
@@ -50,28 +79,21 @@ export default function Preloader() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <circle cx="24" cy="24" r="2.5" fill="white" />
+
+              <circle
+                cx="24"
+                cy="24"
+                r="2.5"
+                fill="white"
+              />
             </svg>
           </div>
         </div>
 
-        {/* Brand name */}
-        <h1 className="text-3xl font-extrabold tracking-tight text-[#123e2b]">
+        {/* Brand name only */}
+        <h1 className="mt-8 text-[34px] font-extrabold tracking-[-0.04em] text-[#123e2b]">
           Auto<span className="text-[#176b46]">Connet</span>
         </h1>
-
-        <p className="mt-3 text-sm text-gray-500">
-          Connecting skills. Creating opportunities.
-        </p>
-
-        {/* Loading indicator */}
-        <div className="mt-7 flex items-center gap-2">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#176b46]" />
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#176b46]">
-            Loading AutoConnet
-          </p>
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#176b46]" />
-        </div>
       </div>
     </div>
   );

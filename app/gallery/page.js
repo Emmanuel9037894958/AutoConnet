@@ -42,14 +42,18 @@ export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-[#f4f8f3] text-[#19251f]">
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#103e2b] via-[#176b46] to-[#258052] px-4 pb-20 pt-28 text-white sm:pb-28 sm:pt-36">
+      <section
+        className="relative overflow-hidden bg-cover bg-center bg-no-repeat px-4 pb-20 pt-13 text-white sm:pb-28 sm:pt-36"
+        style={{
+          backgroundImage: "url('/group-image2.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+
         <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#8bd6a4]/20 blur-3xl" />
         <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-[#e9b66b]/20 blur-3xl" />
 
         <div className="relative mx-auto max-w-[1160px]">
-          <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[2px] text-[#c7f0d3]">
-            AutoConnet Gallery
-          </span>
 
           <h1 className="mt-6 max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
             Discover skills.
@@ -122,41 +126,50 @@ export default function GalleryPage() {
         </div>
 
         {images.length > 0 ? (
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-            {images.map((image) => (
-              <a
-                key={image.filename}
-                href={image.src}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-[#e3ece4] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:rounded-[22px]"
-              >
-                <img
-                  src={image.src}
-                  alt={`AutoConnet gallery image ${image.number}`}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
-                />
+          <>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+              {images.map((image) => (
+                <a
+                  key={image.filename}
+                  href={image.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-[#e3ece4] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:rounded-[22px]"
+                >
+                  <img
+                    src={image.src}
+                    alt={`AutoConnet gallery image ${image.number}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-70 transition group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-70 transition group-hover:opacity-100" />
 
-                <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-3 sm:p-4">
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-white/75">
-                      AutoConnet collection
-                    </p>
-                    <p className="mt-1 text-sm font-extrabold text-white sm:text-base">
-                      Image {image.number}
-                    </p>
+                  <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-3 sm:p-4">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-white/75">
+                        AutoConnet collection
+                      </p>
+                      <p className="mt-1 text-sm font-extrabold text-white sm:text-base">
+                        Image {image.number}
+                      </p>
+                    </div>
+
+                    <span className="grid h-9 w-9 place-items-center rounded-full bg-white/20 text-lg text-white backdrop-blur-md transition group-hover:bg-white group-hover:text-[#176b46]">
+                      ↗
+                    </span>
                   </div>
+                </a>
+              ))}
+            </div>
 
-                  <span className="grid h-9 w-9 place-items-center rounded-full bg-white/20 text-lg text-white backdrop-blur-md transition group-hover:bg-white group-hover:text-[#176b46]">
-                    ↗
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
+            {/* LOADING MESSAGE */}
+            <div className="mt-10 text-center  animate-bounce">
+              <span className="text-sm font-semibold text-[#176b46]">
+                Loading more......
+              </span>
+            </div>
+          </>
         ) : (
           <div className="rounded-3xl border border-dashed border-[#b9cdbd] bg-white px-5 py-16 text-center">
             <h3 className="text-xl font-extrabold text-[#193b2b]">

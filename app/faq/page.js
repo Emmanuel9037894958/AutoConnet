@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
@@ -391,34 +390,32 @@ export default function FAQPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f5f8f6] text-slate-800">
-      {/* Hero */}
-            {/* Hero */}
-      <section className="relative overflow-hidden bg-[#104d35] px-4 pb-16 pt-3 text-white sm:px-6 sm:pb-20 sm:pt-10">
+    <main className="min-h-screen overflow-hidden bg-[#0b0816] text-slate-100">
+      {/* HERO */}
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#100b25] via-[#251044] to-[#471b72] px-4 pb-16 pt-8 text-white sm:px-6 sm:pb-20 sm:pt-12">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-purple-500/25 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl" />
 
-        {/* Hero Image — replace image1.jpg with your image filename */}
-        <div className="mx-auto mb-8 max-w-5xl overflow-hidden">
+        <div className="relative mx-auto mb-9 max-w-5xl overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-purple-950/40">
           <img
-            src="/image1.jpg"
+            src="/group-image3.jpg"
             alt="AutoConnet service professionals"
             className="h-56 w-full object-cover sm:h-80 lg:h-96"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#100b25]/70 via-transparent to-transparent" />
         </div>
 
-        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/10" />
-        <div className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full border border-white/10" />
-
         <div className="relative mx-auto max-w-5xl">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-green-50">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-purple-300/30 bg-purple-400/10 px-4 py-2 text-sm font-semibold text-purple-100 backdrop-blur">
             <span aria-hidden="true">✦</span>
             AutoConnet Help Centre
           </div>
 
-          <h1 className="max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+          <h1 className="max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             Answers for every step of your service journey.
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-green-50/90 sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-purple-100/80 sm:text-lg">
             Whether you need a reliable professional or want to grow your
             service business, find helpful information about using AutoConnet.
           </p>
@@ -426,14 +423,14 @@ export default function FAQPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/services"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-5 py-3 font-bold text-[#104d35] transition hover:bg-green-50"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-purple-400 px-5 py-3 font-bold text-[#170d2b] shadow-lg shadow-purple-950/20 transition hover:-translate-y-0.5 hover:bg-purple-300"
             >
               Find a service
             </Link>
 
             <Link
               href="/join-as-worker"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/35 px-5 py-3 font-bold text-white transition hover:bg-white/10"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-purple-200/40 bg-white/5 px-5 py-3 font-bold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/10"
             >
               Join as a worker
             </Link>
@@ -441,12 +438,12 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Search */}
+      {/* SEARCH */}
       <section className="relative z-10 mx-auto -mt-7 max-w-5xl px-4 sm:px-6">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-lg shadow-slate-900/5 sm:p-6">
+        <div className="rounded-2xl border border-purple-400/20 bg-[#171127] p-4 shadow-2xl shadow-black/30 sm:p-6">
           <label
             htmlFor="faq-search"
-            className="mb-3 block text-sm font-bold text-slate-800"
+            className="mb-3 block text-sm font-bold text-purple-100"
           >
             What do you need help with?
           </label>
@@ -455,7 +452,7 @@ export default function FAQPage() {
             <div className="relative flex-1">
               <span
                 aria-hidden="true"
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-slate-400"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-purple-300"
               >
                 ⌕
               </span>
@@ -470,7 +467,7 @@ export default function FAQPage() {
                   setOpenItems([]);
                 }}
                 placeholder="Search payments, registration, workers..."
-                className="min-h-12 w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-12 pr-4 text-sm outline-none transition placeholder:text-slate-400 focus:border-[#176b46] focus:bg-white focus:ring-4 focus:ring-green-900/5"
+                className="min-h-12 w-full rounded-xl border border-purple-300/20 bg-[#0e0a1c] py-3 pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-purple-300/40 focus:border-purple-400 focus:ring-4 focus:ring-purple-500/10"
               />
             </div>
 
@@ -480,14 +477,15 @@ export default function FAQPage() {
                 setSearch("");
                 setOpenItems([]);
               }}
-              className="min-h-12 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-50"
+              className="min-h-12 rounded-xl border border-purple-300/20 px-5 py-3 text-sm font-semibold text-purple-100 transition hover:border-purple-400/50 hover:bg-purple-500/10"
             >
               Clear search
             </button>
           </div>
 
           <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
-            <span className="mr-1 text-slate-500">Popular:</span>
+            <span className="mr-1 text-purple-200/60">Popular:</span>
+
             {["₦800 fee", "Payment pending", "Find a worker", "Refund"].map(
               (term) => (
                 <button
@@ -498,7 +496,7 @@ export default function FAQPage() {
                     setShowAll(false);
                     setOpenItems([]);
                   }}
-                  className="rounded-full bg-green-50 px-3 py-2 font-medium text-[#176b46] transition hover:bg-green-100"
+                  className="rounded-full border border-purple-400/20 bg-purple-500/10 px-3 py-2 font-medium text-purple-200 transition hover:border-purple-400/50 hover:bg-purple-500/20"
                 >
                   {term}
                 </button>
@@ -508,17 +506,23 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Audience filters */}
-      <section className="mx-auto max-w-5xl px-4 pb-12 pt-10 sm:px-6">
+      {/* FAQ CONTENT */}
+      <section className="mx-auto max-w-5xl px-4 pb-16 pt-12 sm:px-6">
         <div className="mb-7">
-          <h2 className="text-xl font-extrabold text-slate-900 sm:text-2xl">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
+            Knowledge centre
+          </span>
+
+          <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
             Browse help topics
           </h2>
-          <p className="mt-2 text-sm leading-6 text-slate-500">
+
+          <p className="mt-2 text-sm leading-6 text-purple-200/60">
             Choose the questions most relevant to you.
           </p>
         </div>
 
+        {/* AUDIENCE FILTERS */}
         <div className="mb-5 flex flex-wrap gap-2">
           {AUDIENCES.map((item) => (
             <button
@@ -532,8 +536,8 @@ export default function FAQPage() {
               aria-pressed={audience === item.value}
               className={`rounded-full border px-4 py-2.5 text-sm font-semibold transition ${
                 audience === item.value
-                  ? "border-[#176b46] bg-[#176b46] text-white"
-                  : "border-slate-200 bg-white text-slate-600 hover:border-green-300 hover:text-[#176b46]"
+                  ? "border-purple-400 bg-purple-500 text-white shadow-lg shadow-purple-950/30"
+                  : "border-purple-300/15 bg-[#171127] text-purple-200/70 hover:border-purple-400/50 hover:text-white"
               }`}
             >
               {item.label}
@@ -541,7 +545,8 @@ export default function FAQPage() {
           ))}
         </div>
 
-        <div className="mb-7 flex gap-2 overflow-x-auto pb-2">
+        {/* CATEGORY FILTERS */}
+        <div className="mb-7 flex gap-2 overflow-x-auto pb-3">
           {CATEGORIES.map((item) => (
             <button
               key={item}
@@ -554,8 +559,8 @@ export default function FAQPage() {
               aria-pressed={category === item}
               className={`shrink-0 rounded-xl border px-4 py-3 text-sm font-semibold transition ${
                 category === item
-                  ? "border-green-200 bg-green-50 text-[#176b46]"
-                  : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
+                  ? "border-purple-400/50 bg-purple-500/15 text-purple-200"
+                  : "border-purple-300/15 bg-[#171127] text-purple-200/60 hover:border-purple-400/40 hover:text-white"
               }`}
             >
               {item}
@@ -563,24 +568,27 @@ export default function FAQPage() {
           ))}
         </div>
 
+        {/* RESULTS COUNT */}
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-          <p className="text-sm text-slate-500" aria-live="polite">
-            <strong className="text-slate-800">{filteredFAQs.length}</strong>{" "}
+          <p className="text-sm text-purple-200/60" aria-live="polite">
+            <strong className="text-white">{filteredFAQs.length}</strong>{" "}
             {filteredFAQs.length === 1 ? "answer" : "answers"} found
           </p>
 
-          {(search || category !== "All questions" || audience !== "all") && (
+          {(search ||
+            category !== "All questions" ||
+            audience !== "all") && (
             <button
               type="button"
               onClick={resetFilters}
-              className="text-sm font-semibold text-[#176b46] underline underline-offset-4"
+              className="text-sm font-semibold text-purple-300 underline underline-offset-4 transition hover:text-white"
             >
               Reset all filters
             </button>
           )}
         </div>
 
-        {/* Questions */}
+        {/* QUESTIONS */}
         <div className="space-y-3">
           {visibleFAQs.map((faq) => {
             const originalIndex = FAQS.indexOf(faq);
@@ -589,10 +597,10 @@ export default function FAQPage() {
             return (
               <article
                 key={faq.question}
-                className={`overflow-hidden rounded-2xl border bg-white transition ${
+                className={`overflow-hidden rounded-2xl border bg-[#171127] transition duration-200 ${
                   isOpen
-                    ? "border-green-200 shadow-sm"
-                    : "border-slate-200 hover:border-slate-300"
+                    ? "border-purple-400/50 shadow-lg shadow-purple-950/20"
+                    : "border-purple-300/10 hover:border-purple-400/30"
                 }`}
               >
                 <button
@@ -602,20 +610,21 @@ export default function FAQPage() {
                   className="flex w-full items-start justify-between gap-4 p-5 text-left sm:p-6"
                 >
                   <span className="min-w-0">
-                    <span className="mb-2 block text-xs font-bold uppercase tracking-wider text-[#176b46]">
+                    <span className="mb-2 block text-xs font-bold uppercase tracking-wider text-purple-400">
                       {faq.category}
                     </span>
-                    <span className="block text-base font-bold leading-6 text-slate-900 sm:text-lg">
+
+                    <span className="block text-base font-bold leading-6 text-white sm:text-lg">
                       {faq.question}
                     </span>
                   </span>
 
                   <span
                     aria-hidden="true"
-                    className={`mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xl transition ${
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xl transition duration-200 ${
                       isOpen
-                        ? "rotate-45 bg-green-100 text-[#176b46]"
-                        : "bg-slate-100 text-slate-600"
+                        ? "rotate-45 bg-purple-500 text-white"
+                        : "bg-purple-500/10 text-purple-300"
                     }`}
                   >
                     +
@@ -624,8 +633,8 @@ export default function FAQPage() {
 
                 {isOpen && (
                   <div className="px-5 pb-5 sm:px-6 sm:pb-6">
-                    <div className="border-t border-slate-100 pt-4">
-                      <p className="text-sm leading-7 text-slate-600 sm:text-base">
+                    <div className="border-t border-purple-300/10 pt-4">
+                      <p className="text-sm leading-7 text-purple-100/70 sm:text-base">
                         {faq.answer}
                       </p>
 
@@ -637,7 +646,7 @@ export default function FAQPage() {
                             `Hello AutoConnet Support, I need more help with: ${faq.question}`
                           )
                         }
-                        className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#176b46] hover:underline"
+                        className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-purple-300 transition hover:text-white"
                       >
                         Still need help? Contact support
                         <span aria-hidden="true">↗</span>
@@ -650,12 +659,13 @@ export default function FAQPage() {
           })}
         </div>
 
+        {/* VIEW ALL */}
         {filteredFAQs.length > 8 && (
-          <div className="mt-7 text-center">
+          <div className="mt-8 text-center">
             <button
               type="button"
               onClick={() => setShowAll((current) => !current)}
-              className="min-h-12 rounded-xl border border-slate-300 bg-white px-6 py-3 font-bold text-slate-700 transition hover:border-green-300 hover:text-[#176b46]"
+              className="min-h-12 rounded-xl border border-purple-400/30 bg-purple-500/10 px-7 py-3 font-bold text-purple-200 transition hover:border-purple-400/60 hover:bg-purple-500/20 hover:text-white"
             >
               {showAll
                 ? "Show fewer questions"
@@ -664,22 +674,29 @@ export default function FAQPage() {
           </div>
         )}
 
+        {/* NO RESULTS */}
         {filteredFAQs.length === 0 && (
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-5 py-12 text-center">
-            <div className="text-4xl" aria-hidden="true">
+          <div className="rounded-2xl border border-dashed border-purple-400/30 bg-[#171127] px-5 py-14 text-center">
+            <div
+              className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-500/10 text-3xl text-purple-300"
+              aria-hidden="true"
+            >
               ?
             </div>
-            <h3 className="mt-4 text-lg font-bold text-slate-900">
+
+            <h3 className="mt-5 text-lg font-bold text-white">
               We couldn't find that answer
             </h3>
-            <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
+
+            <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-purple-200/60">
               Try a different word or contact our support team for help with
               your question.
             </p>
+
             <button
               type="button"
               onClick={resetFilters}
-              className="mt-5 rounded-xl bg-[#176b46] px-5 py-3 font-bold text-white transition hover:bg-[#104d35]"
+              className="mt-6 rounded-xl bg-purple-500 px-5 py-3 font-bold text-white transition hover:bg-purple-400"
             >
               Browse all questions
             </button>
@@ -687,66 +704,82 @@ export default function FAQPage() {
         )}
       </section>
 
-      {/* Contact support */}
-      <section className="border-t border-slate-200 bg-white px-4 py-14 sm:px-6 sm:py-16">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+      {/* CONTACT SUPPORT */}
+      <section className="relative overflow-hidden border-t border-purple-400/10 bg-gradient-to-br from-[#130d25] via-[#1c1030] to-[#291044] px-4 py-16 sm:px-6 sm:py-20">
+        <div className="pointer-events-none absolute -right-20 top-0 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl" />
+
+        <div className="relative mx-auto max-w-5xl">
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <span className="text-sm font-bold uppercase tracking-wider text-[#176b46]">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
                 Personal assistance
               </span>
-              <h2 className="mt-3 text-2xl font-extrabold text-slate-900 sm:text-3xl">
+
+              <h2 className="mt-4 max-w-xl text-3xl font-extrabold leading-tight text-white sm:text-4xl">
                 Didn't find the answer you need?
               </h2>
-              <p className="mt-4 max-w-xl leading-7 text-slate-600">
+
+              <p className="mt-5 max-w-xl leading-7 text-purple-100/65">
                 Our listed support contacts can help you explain your issue.
                 Please include enough information for us to understand the
                 problem, but never send passwords, PINs or one-time codes.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#176b46] px-5 py-3 font-bold text-white transition hover:bg-[#104d35]"
+                  className="inline-flex min-h-12 items-center justify-center rounded-xl bg-purple-500 px-5 py-3 font-bold text-white shadow-lg shadow-purple-950/30 transition hover:-translate-y-0.5 hover:bg-purple-400"
                 >
                   Visit contact page
                 </Link>
+
                 <Link
                   href="/services"
-                  className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-200 px-5 py-3 font-bold text-slate-700 transition hover:bg-slate-50"
+                  className="inline-flex min-h-12 items-center justify-center rounded-xl border border-purple-300/20 bg-white/5 px-5 py-3 font-bold text-purple-100 transition hover:bg-white/10"
                 >
                   Explore services
                 </Link>
               </div>
             </div>
 
+            {/* SUPPORT CONTACT CARDS */}
             <div className="space-y-3">
               {SUPPORT_NUMBERS.map((number) => (
                 <div
                   key={number.tel}
-                  className="rounded-2xl border border-slate-200 bg-[#f8faf9] p-5"
+                  className="rounded-2xl border border-purple-300/15 bg-[#171127] p-5 shadow-xl shadow-black/10 transition hover:border-purple-400/40"
                 >
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                    AutoConnet support
-                  </p>
-                  <p className="mt-2 text-lg font-extrabold text-slate-900">
-                    {number.label}
-                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-500/15 text-xl text-purple-300">
+                      <span aria-hidden="true">☎</span>
+                    </div>
 
-                  <div className="mt-4 flex flex-wrap gap-2">
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-wider text-purple-300/60">
+                        AutoConnet support
+                      </p>
+
+                      <p className="mt-1 text-lg font-extrabold text-white">
+                        {number.label}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
                     <a
                       href={`tel:${number.tel}`}
-                      className="inline-flex min-h-10 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-green-300"
+                      className="inline-flex min-h-10 items-center justify-center rounded-lg border border-purple-300/20 bg-white/5 px-4 py-2 text-sm font-bold text-purple-100 transition hover:border-purple-400/50 hover:bg-purple-500/10"
                     >
                       Call
                     </a>
+
                     <a
                       href={`https://wa.me/${number.whatsapp}?text=${encodeURIComponent(
                         "Hello AutoConnet Support, I need help."
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-10 items-center justify-center rounded-lg bg-green-100 px-4 py-2 text-sm font-bold text-[#176b46] hover:bg-green-200"
+                      className="inline-flex min-h-10 items-center justify-center rounded-lg bg-purple-500/15 px-4 py-2 text-sm font-bold text-purple-200 transition hover:bg-purple-500/30"
                     >
                       WhatsApp
                     </a>

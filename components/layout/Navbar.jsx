@@ -65,6 +65,7 @@ const navLinks = [
   { label: "How it works", href: "/#how-it-works" },
   { label: "For professionals", href: "/#professionals" },
   { label: "FAQ", href: "/faq" },
+  { label: "Gallery", href: "/gallery" },
 ];
 
 export default function Navbar() {

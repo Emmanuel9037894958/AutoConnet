@@ -309,22 +309,32 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#f4f8f5] text-slate-900">
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#063b2b] via-[#07583d] to-[#0b7650]">
+           {/* HERO */}
+      <section
+        className="relative overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/group-image2.jpg')",
+        }}
+      >
+        {/* Dark overlay to keep all text readable */}
+        <div className="absolute inset-0 bg-[#063b2b]/75" />
+
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-emerald-400/20 blur-3xl"
         />
+
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-lime-300/10 blur-3xl"
         />
 
-        <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
+        <div className="relative mx-auto max-w-7xl px-5 py-11 sm:px-8 sm:py-20 lg:px-10">
           <div className="max-w-3xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur">
+            {/* <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur">
               <ShieldCheck size={17} />
               Find trusted local service providers
-            </div>
+            </div> */}
 
             <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
               What do you need
