@@ -35,9 +35,6 @@ export default function ProfessionSlider() {
           LIVE
         </span>
 
-        <span className="text-sm font-medium text-[#68766c]">
-          Discover skilled professionals
-        </span>
       </div>
 
       <div className="overflow-hidden">

@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/layout/Navbar";
 // import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
@@ -23,88 +22,79 @@ export default function HomePage() {
 
       <ServiceCategories />
 
-      
-<section
-  id="how-it-works"
-  className="scroll-mt-24 overflow-hidden bg-gradient-to-br from-[#e8f5eb] via-[#f1f7e9] to-[#fff1dc] py-16 sm:py-20"
->
-  <div className="mx-auto w-[calc(100%-32px)] max-w-[1160px]">
-    <div className="mx-auto max-w-2xl text-center">
-      <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[2px] text-[#176b46] shadow-sm">
-        <span className="h-2 w-2 rounded-full bg-[#28a66a]" />
-        Simple by design
-      </span>
-
-      <h2 className="mt-5 text-3xl font-extrabold tracking-[-1px] text-[#153f2d] sm:text-4xl">
-        Getting help should be easy.
-      </h2>
-
-      <p className="mt-4 leading-7 text-[#586b5e]">
-        Discover professionals and discuss your job directly with them.
-      </p>
-    </div>
-
-    <div className="mt-12 grid gap-5 md:grid-cols-3">
-      {[
-        {
-          // number: "01",
-          icon: "⌕",
-          title: "Find your service",
-          description:
-            "Choose a category or search for the particular skill you need.",
-          background: "bg-[#dff2e4]",
-          iconBackground: "bg-[#176b46]",
-        },
-        {
-          // number: "02",
-          icon: "♙",
-          title: "Explore professionals",
-          description:
-            "Review worker profiles, service areas and available contact information.",
-          background: "bg-[#e1efff]",
-          iconBackground: "bg-[#2875bd]",
-        },
-        {
-          // number: "03",
-          icon: "↗",
-          title: "Connect directly",
-          description:
-            "Discuss your requirements, agree on the price and arrange the job.",
-          background: "bg-[#fff0d9]",
-          iconBackground: "bg-[#d88724]",
-        },
-      ].map((step) => (
-        <div
-          key={step.number}
-          className={`${step.background} group rounded-[26px] border border-white/80 p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl`}
-        >
-          <div className="flex items-center justify-between">
-            <span
-              className={`grid h-14 w-14 place-items-center rounded-2xl ${step.iconBackground} text-3xl font-bold text-white shadow-md`}
-            >
-              {step.icon}
+      <section
+        id="how-it-works"
+        className="scroll-mt-24 overflow-hidden bg-gradient-to-br from-[#e8f5eb] via-[#f1f7e9] to-[#fff1dc] py-16 sm:py-20"
+      >
+        <div className="mx-auto w-[calc(100%-32px)] max-w-[1160px]">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[2px] text-[#176b46] shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-[#28a66a]" />
+              Simple by design
             </span>
 
-            <span className="text-4xl font-black text-[#153f2d]/15">
-              {step.number}
-            </span>
+            <h2 className="mt-5 text-3xl font-extrabold tracking-[-1px] text-[#153f2d] sm:text-4xl">
+              Getting help should be easy.
+            </h2>
+
+            <p className="mt-4 leading-7 text-[#586b5e]">
+              Discover professionals and discuss your job directly with them.
+            </p>
           </div>
 
-          <h3 className="mt-7 text-xl font-extrabold text-[#193b2b]">
-            {step.title}
-          </h3>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                icon: "⌕",
+                title: "Find your service",
+                description:
+                  "Choose a category or search for the particular skill you need.",
+                background: "bg-[#dff2e4]",
+                iconBackground: "bg-[#176b46]",
+              },
+              {
+                icon: "♙",
+                title: "Explore professionals",
+                description:
+                  "Review worker profiles, service areas and available contact information.",
+                background: "bg-[#e1efff]",
+                iconBackground: "bg-[#2875bd]",
+              },
+              {
+                icon: "↗",
+                title: "Connect directly",
+                description:
+                  "Discuss your requirements, agree on the price and arrange the job.",
+                background: "bg-[#fff0d9]",
+                iconBackground: "bg-[#d88724]",
+              },
+            ].map((step, index) => (
+              <div
+                key={`step-${index}`}
+                className={`${step.background} group rounded-[26px] border border-white/80 p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl`}
+              >
+                <div className="flex items-center justify-between">
+                  <span
+                    className={`grid h-14 w-14 place-items-center rounded-2xl ${step.iconBackground} text-3xl font-bold text-white shadow-md`}
+                  >
+                    {step.icon}
+                  </span>
+                </div>
 
-          <p className="mt-3 text-sm leading-7 text-[#586b5e]">
-            {step.description}
-          </p>
+                <h3 className="mt-7 text-xl font-extrabold text-[#193b2b]">
+                  {step.title}
+                </h3>
 
-          <div className="mt-6 h-1.5 w-12 rounded-full bg-[#176b46] transition-all duration-300 group-hover:w-20" />
+                <p className="mt-3 text-sm leading-7 text-[#586b5e]">
+                  {step.description}
+                </p>
+
+                <div className="mt-6 h-1.5 w-12 rounded-full bg-[#176b46] transition-all duration-300 group-hover:w-20" />
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+      </section>
 
       <section id="professionals" className="py-16 sm:py-20">
         <div className="mx-auto w-[calc(100%-32px)] max-w-[1160px]">
