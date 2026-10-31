@@ -12,7 +12,6 @@ import {
   Target,
   Eye,
   Sparkles,
-  Wrench,
   BadgeCheck,
   Handshake,
   Globe2,
@@ -22,11 +21,10 @@ import {
 const founders = [
   {
     name: "Amamchukwu Emmanuel O",
-    role: "Founder & Chief Executive Officer (CEO)",
+    role: "Founder & Chief Executive Officer (NYEA)",
     image: "/founder.jpg",
     description:
       "Leads the vision, strategy and growth of AutoConnet, building a trusted platform that connects customers with skilled professionals.",
-    number: "01",
   },
   {
     name: "Okoye Chinonso Joseph (Otoko_isu)",
@@ -34,7 +32,6 @@ const founders = [
     image: "/co-founder.jpg",
     description:
       "Supports the development and daily operations of AutoConnet, helping build a reliable experience for customers and service providers.",
-    number: "02",
   },
 ];
 
@@ -67,21 +64,18 @@ const values = [
 
 const steps = [
   {
-    number: "01",
     title: "Find a service",
     description:
       "Browse service categories and explore providers serving your area.",
     icon: Search,
   },
   {
-    number: "02",
     title: "Choose a provider",
     description:
       "Review available profile information, skills and service locations.",
     icon: BadgeCheck,
   },
   {
-    number: "03",
     title: "Contact directly",
     description:
       "Reach a provider by phone or WhatsApp to discuss the job, price and timing.",
@@ -96,7 +90,7 @@ const serviceExamples = [
   { name: "Phone repairs" },
   { name: "Computer services" },
   { name: "Automotive repairs" },
-  { name: "Painting"},
+  { name: "Painting" },
   { name: "Cleaning" },
 ];
 
@@ -104,13 +98,13 @@ export default function AboutPage() {
   return (
     <main className="overflow-hidden bg-white text-slate-900">
       {/* HERO */}
-      
       <section className="relative isolate bg-[#092b20]">
         <img
-  src="/group-image.jpg"
-  alt="Skilled professionals representing AutoConnet"
-  className="h-[260px] w-full object-cover sm:h-[420px] lg:h-[520px]"
-/>
+          src="/group-image.jpg"
+          alt="Skilled professionals representing AutoConnet"
+          className="h-[260px] w-full object-cover sm:h-[420px] lg:h-[520px]"
+        />
+
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl" />
           <div className="absolute -bottom-32 left-0 h-80 w-80 rounded-full bg-lime-400/10 blur-3xl" />
@@ -159,6 +153,7 @@ export default function AboutPage() {
                 <CheckCircle2 size={17} className="text-emerald-300" />
                 Direct customer contact
               </span>
+
               <span className="flex items-center gap-2">
                 <CheckCircle2 size={17} className="text-emerald-300" />
                 Starting in Anambra State
@@ -168,6 +163,7 @@ export default function AboutPage() {
 
           <div className="relative mx-auto w-full max-w-xl">
             <div className="absolute -inset-4 rounded-[2rem] border border-emerald-300/15" />
+
             <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#123c2e] p-3 shadow-2xl shadow-black/30">
               <img
                 src="/image45.jpg"
@@ -179,6 +175,7 @@ export default function AboutPage() {
                 <p className="text-sm font-semibold text-emerald-300">
                   Our mission
                 </p>
+
                 <p className="mt-2 text-lg font-bold leading-7 text-white sm:text-xl">
                   Making skilled services easier to find and opportunities
                   easier to reach.
@@ -195,9 +192,11 @@ export default function AboutPage() {
           <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-emerald-700">
             Who we are
           </p>
+
           <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-4xl">
             Connecting talent with the people who need it.
           </h2>
+
           <div className="mt-6 h-1.5 w-20 rounded-full bg-emerald-500" />
         </div>
 
@@ -208,12 +207,14 @@ export default function AboutPage() {
             difficult. At the same time, talented workers need better ways to
             showcase their services and reach potential customers.
           </p>
+
           <p>
             AutoConnet was created to help bridge that gap. Our platform
             brings service categories and provider profiles together in one
             place, making it easier for customers to discover available
             professionals and contact them directly.
           </p>
+
           <p>
             We are beginning with a focus on Anambra State, Nigeria, with the
             long-term ambition of reaching more communities and making the
@@ -229,12 +230,15 @@ export default function AboutPage() {
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-800">
               <Target size={27} />
             </div>
+
             <p className="mt-7 text-sm font-extrabold uppercase tracking-widest text-emerald-700">
               Our mission
             </p>
+
             <h2 className="mt-3 text-2xl font-black sm:text-3xl">
               Make finding skilled services simpler.
             </h2>
+
             <p className="mt-4 leading-8 text-slate-600">
               We aim to make it easier for customers to discover skilled
               professionals and for workers to present their abilities,
@@ -246,12 +250,15 @@ export default function AboutPage() {
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-emerald-300">
               <Eye size={27} />
             </div>
+
             <p className="mt-7 text-sm font-extrabold uppercase tracking-widest text-emerald-300">
               Our vision
             </p>
+
             <h2 className="mt-3 text-2xl font-black sm:text-3xl">
               A trusted connection point for skilled work.
             </h2>
+
             <p className="mt-4 leading-8 text-slate-300">
               We envision a growing service marketplace where skilled
               professionals can build visibility and customers can find
@@ -268,9 +275,11 @@ export default function AboutPage() {
           <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-emerald-700">
             How AutoConnet works
           </p>
+
           <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
             A simpler way to connect
           </h2>
+
           <p className="mt-4 leading-7 text-slate-600">
             We focus on discovery and direct communication, helping customers
             and skilled workers take the next step.
@@ -283,18 +292,15 @@ export default function AboutPage() {
 
             return (
               <div
-                key={step.number}
+                key={step.title}
                 className="group rounded-3xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-900/5 sm:p-8"
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-black tracking-widest text-emerald-700">
-                    {step.number}
-                  </span>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-800 transition group-hover:bg-emerald-600 group-hover:text-white">
-                    <Icon size={23} />
-                  </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-800 transition group-hover:bg-emerald-600 group-hover:text-white">
+                  <Icon size={23} />
                 </div>
+
                 <h3 className="mt-7 text-xl font-extrabold">{step.title}</h3>
+
                 <p className="mt-3 leading-7 text-slate-600">
                   {step.description}
                 </p>
@@ -311,14 +317,17 @@ export default function AboutPage() {
             <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-emerald-300">
               Services that matter
             </p>
+
             <h2 className="mt-4 text-3xl font-black leading-tight sm:text-4xl">
               Many skills. One place to start.
             </h2>
+
             <p className="mt-5 max-w-xl leading-8 text-slate-300">
               From repairs and home maintenance to technology and everyday
               services, AutoConnet is being developed to help people discover
               professionals across a growing range of categories.
             </p>
+
             <Link
               href="/services"
               className="mt-8 inline-flex items-center gap-2 font-bold text-emerald-300 transition hover:text-white"
@@ -333,9 +342,6 @@ export default function AboutPage() {
                 key={service.name}
                 className="flex min-h-24 items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-4 transition hover:border-emerald-300/40 hover:bg-white/[0.09] sm:p-5"
               >
-                <span className="text-2xl" aria-hidden="true">
-                  {service.icon}
-                </span>
                 <span className="text-sm font-bold sm:text-base">
                   {service.name}
                 </span>
@@ -351,6 +357,7 @@ export default function AboutPage() {
           <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-emerald-700">
             What guides us
           </p>
+
           <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
             Built around people and opportunity.
           </h2>
@@ -368,7 +375,9 @@ export default function AboutPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-800">
                   <Icon size={23} />
                 </div>
+
                 <h3 className="mt-5 text-lg font-extrabold">{value.title}</h3>
+
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   {value.description}
                 </p>
@@ -381,7 +390,7 @@ export default function AboutPage() {
       {/* FOUNDERS */}
       <section
         id="founders"
-        className="relative overflow-hidden bg-[#f3f8f5] py-10  lg:py-28"
+        className="relative overflow-hidden bg-[#f3f8f5] py-10 lg:py-28"
       >
         <div className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-emerald-200/40 blur-3xl" />
         <div className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-lime-200/30 blur-3xl" />
@@ -410,14 +419,10 @@ export default function AboutPage() {
           <div className="mx-auto mt-14 grid max-w-4xl gap-8 md:grid-cols-2 md:gap-10">
             {founders.map((founder) => (
               <article
-                key={founder.number}
+                key={founder.name}
                 className="group overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-950/10"
               >
                 <div className="relative overflow-hidden bg-[#dcebe2]">
-                  <div className="absolute left-5 top-5 z-10 rounded-full border border-white/60 bg-white/90 px-3 py-1.5 text-xs font-black tracking-widest text-emerald-900 shadow-sm">
-                    {founder.number}
-                  </div>
-
                   <img
                     src={founder.image}
                     alt={founder.name}
@@ -434,7 +439,7 @@ export default function AboutPage() {
                     {founder.role}
                   </p>
 
-                  <div className="mx-auto my-5 h-1 w-12 rounded-full bg-emerald-400" />
+                  {/* <div className="mx-auto my-5 h-1 w-12 rounded-full bg-emerald-400" /> */}
 
                   <p className="text-sm leading-7 text-slate-600 sm:text-base">
                     {founder.description}
@@ -443,11 +448,6 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-
-          <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-6 text-slate-500">
-            Replace the sample names and portrait files with the founders’
-            correct details and photographs before publishing this page.
-          </p>
         </div>
       </section>
 
@@ -457,10 +457,12 @@ export default function AboutPage() {
           <div>
             <div className="flex items-center gap-3">
               <ShieldCheck className="shrink-0 text-emerald-700" size={27} />
+
               <h2 className="text-xl font-black sm:text-2xl">
                 A clear and transparent experience
               </h2>
             </div>
+
             <p className="mt-4 max-w-3xl leading-8 text-slate-600">
               Customers can browse available providers and contact them
               directly without paying AutoConnet to access listings. Service
