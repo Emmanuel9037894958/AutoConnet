@@ -33,6 +33,13 @@ const founders = [
     description:
       "Supports the development and daily operations of AutoConnet, helping build a reliable experience for customers and service providers.",
   },
+  {
+    name: "Favour U ChukwuEmeka",
+    role: "Co-Founder, Strategic Partner & Sponsor | CEO, Favyglam Mart",
+    image: "/bosslady.jpeg",
+    description:
+      "Favour U ChukwuEmeka supports AutoConnet’s growth through strategic planning, sponsorship, innovative ideas and valuable guidance. She is also the CEO of Favyglam Mart, where she leads business operations and drives growth.",
+  },
 ];
 
 const values = [
@@ -416,7 +423,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-14 grid max-w-4xl gap-8 md:grid-cols-2 md:gap-10">
+          <div className="mx-auto mt-14 grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
             {founders.map((founder) => (
               <article
                 key={founder.name}
@@ -439,9 +446,7 @@ export default function AboutPage() {
                     {founder.role}
                   </p>
 
-                  {/* <div className="mx-auto my-5 h-1 w-12 rounded-full bg-emerald-400" /> */}
-
-                  <p className="text-sm leading-7 text-slate-600 sm:text-base">
+                  <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
                     {founder.description}
                   </p>
                 </div>
@@ -452,7 +457,7 @@ export default function AboutPage() {
       </section>
 
       {/* TRANSPARENCY */}
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
+      <section className="mx-auto max-w-7xl px-5 py-4 sm:px-8 lg:px-12 lg:py-20">
         <div className="grid gap-6 rounded-3xl border border-emerald-900/10 bg-white p-7 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <div className="flex items-center gap-3">

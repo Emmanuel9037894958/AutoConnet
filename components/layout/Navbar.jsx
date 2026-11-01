@@ -126,7 +126,7 @@ export default function Navbar() {
           <div className="hidden shrink-0 items-center gap-3 sm:flex">
             <Link
               href="/join-as-worker"
-              className="whitespace-nowrap rounded-xl border border-[#dce5dc] px-4 py-3 text-sm font-semibold transition hover:bg-white"
+              className="whitespace-nowrap rounded-xl border border-[#dce5dc] px-4 py-3 text-sm font-semibold transition hover:bg-green bg-green-800"
             >
               Join as a worker
             </Link>

@@ -131,7 +131,6 @@ async function completeWorkerProfile(user) {
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const nextPath = searchParams.get("next");
 
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({
@@ -205,7 +204,7 @@ function LoginForm() {
 
       const user = data.user;
 
-      // Check administrator access before handling normal accounts.
+      // Administrators always go to the admin dashboard.
       const { data: adminRecord, error: adminCheckError } = await supabase
         .from("autoconnet_admins")
         .select("user_id")
@@ -227,16 +226,14 @@ function LoginForm() {
         return;
       }
 
-      // Only worker/provider accounts should have a worker profile.
+      // Only provider accounts need to complete provider registration payment.
       const isProvider =
         user.user_metadata?.account_type === "provider";
 
       if (isProvider) {
         try {
-          // Restore the worker's profile and selected services if needed.
           await completeWorkerProfile(user);
 
-          // Check whether the worker has completed the ₦800 payment.
           const { data: payment, error: paymentError } = await supabase
             .from("registration_payments")
             .select("id, status")
@@ -252,11 +249,11 @@ function LoginForm() {
             );
           }
 
-          // Unpaid workers must pay before proceeding.
+          // Only unpaid providers are redirected to payment.
           if (!payment) {
             setMessageType("success");
             setMessage(
-              "Welcome back! Taking you to your worker registration payment..."
+              "Welcome back! Taking you to complete your provider registration..."
             );
 
             router.replace("/registration-payment");
@@ -273,19 +270,11 @@ function LoginForm() {
         }
       }
 
-      // Customers and workers with a successful payment can continue.
+      // Customers and providers who have paid always go to the homepage.
       setMessageType("success");
-      setMessage("Signed in successfully. Taking you to AutoConnet...");
+      setMessage("Signed in successfully. Welcome to AutoConnet!");
 
-      const destination =
-        nextPath &&
-        nextPath.startsWith("/") &&
-        !nextPath.startsWith("//") &&
-        !nextPath.startsWith("/admin")
-          ? nextPath
-          : "/";
-
-      router.replace(destination);
+      router.replace("/");
       router.refresh();
     } catch (error) {
       setMessageType("error");

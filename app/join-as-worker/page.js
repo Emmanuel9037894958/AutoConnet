@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
 
 const benefits = [
@@ -61,6 +62,8 @@ function parseLocation(location) {
 }
 
 export default function JoinAsWorkerPage() {
+  const router = useRouter();
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loadingCategories, setLoadingCategories] = useState(true);
@@ -335,7 +338,7 @@ export default function JoinAsWorkerPage() {
           data: metadata,
           emailRedirectTo:
             typeof window !== "undefined"
-              ? `${window.location.origin}/login`
+              ? `${window.location.origin}/auth/callback`
               : undefined,
         },
       });
@@ -352,8 +355,12 @@ export default function JoinAsWorkerPage() {
         await saveWorkerProfile(data.user, selectedServices, metadata);
 
         setEmailConfirmationRequired(false);
-        setShowSuccess(true);
+
+        // Redirect authenticated providers directly to registration payment.
+        router.replace("/registration-payment");
+        return;
       } else {
+        // Email confirmation is required before the provider can sign in.
         setEmailConfirmationRequired(true);
         setShowSuccess(true);
       }
@@ -409,8 +416,9 @@ export default function JoinAsWorkerPage() {
                 <p className="font-bold">One last step: confirm your email</p>
                 <p className="mt-1">
                   Open the confirmation link sent to{" "}
-                  <strong>{form.email.trim()}</strong> before signing in. Your
-                  provider profile may need to be completed after confirmation.
+                  <strong>{form.email.trim()}</strong>. After confirming your
+                  email, sign in to your account. You will automatically be
+                  redirected to complete your provider registration.
                 </p>
               </div>
             ) : (
@@ -427,7 +435,7 @@ export default function JoinAsWorkerPage() {
 
             <div className="mt-7 flex flex-col gap-3">
               <Link
-                href="/login"
+                href="/registration-payment"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#176b46] to-[#258657] px-5 py-4 text-sm font-extrabold text-white shadow-lg transition hover:from-[#105738] hover:to-[#176b46]"
               >
                 Continue to Sign In <span aria-hidden="true">→</span>
