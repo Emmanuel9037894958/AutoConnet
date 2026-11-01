@@ -1,7 +1,7 @@
 
 import { NextResponse } from "next/server";
-import { createSupabaseServerClient } from "../../../../lib/supabase-server";
-import { createSupabaseAdminClient } from "../../../../lib/supabase-admin";
+import { createSupabaseServerClient } from "../../../lib/supabase-server";
+import { createSupabaseAdminClient } from "../../../lib/supabase-admin";
 
 export async function GET(request) {
   const requestUrl = new URL(request.url);
@@ -14,7 +14,7 @@ export async function GET(request) {
   }
 
   try {
-    // Exchange the confirmation code for an authenticated session.
+    // Exchange confirmation code for an authenticated session.
     const supabase = await createSupabaseServerClient();
 
     const { error: exchangeError } =
@@ -28,7 +28,7 @@ export async function GET(request) {
       );
     }
 
-    // Get the authenticated user.
+    // Get authenticated user.
     const {
       data: { user },
       error: userError,
@@ -48,7 +48,7 @@ export async function GET(request) {
       return NextResponse.redirect(new URL("/", request.url));
     }
 
-    // Use the service-role client to save the provider's registration data.
+    // Save provider registration data using the admin client.
     const admin = createSupabaseAdminClient();
 
     const profile = {
@@ -77,7 +77,7 @@ export async function GET(request) {
       );
     }
 
-    // Restore the provider's selected service categories.
+    // Restore selected service categories.
     const serviceSlugs = Array.isArray(metadata.service_slugs)
       ? metadata.service_slugs.filter(
           (slug) => typeof slug === "string" && slug.trim()
@@ -120,8 +120,7 @@ export async function GET(request) {
       }
     }
 
-    // Provider is authenticated and their profile is saved.
-    // Continue to the existing registration payment page.
+    // Continue to provider registration payment.
     return NextResponse.redirect(
       new URL("/registration-payment", request.url)
     );
